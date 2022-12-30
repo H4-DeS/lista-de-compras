@@ -12,13 +12,17 @@ body {
 }
 
 .formulario {
+    display: block;
 	margin: 0 12px;
 }
 
-.formulario label {
-    display: block;
+label {
+    display:block;
     margin: 10px 0;
+}
 
+.bloco_categorias {
+    margin: 2em auto;
 }
 
 .input_padrao {
