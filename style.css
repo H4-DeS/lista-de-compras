@@ -12,13 +12,14 @@ body {
 }
 
 .formulario {
-    display: block;
+    display: inline-block;
+    width: 625px;
 	margin: 0 12px;
 }
 
 label {
     display:block;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 .bloco_categorias {
@@ -27,7 +28,8 @@ label {
 
 .input_padrao {
     display: block;
-    margin-bottom: 10px;
+    background-color: rgb(255, 255, 167);
+    margin: 10px 0;
     width: 40em;
     height: 2em;
     border-radius: 10px;
@@ -47,4 +49,20 @@ label {
 
 .botao:hover{
     background-color: #444444;
+}
+
+.lista_compras{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #444444;
+    display: inline-block;
+    width: 400px;
+}
+
+.categoriaLista {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.itemLista {
+    font-weight: normal;
 }
