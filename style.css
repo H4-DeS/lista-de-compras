@@ -1,0 +1,46 @@
+header {
+    background-color: rgb(0, 0, 110);
+    padding: 15px 10px;
+    color: aliceblue;
+}
+
+body {
+    margin: 0 0;
+    font-family: fantasy;
+    color: #444444;
+    background-color: aliceblue;
+}
+
+.formulario {
+	margin: 0 12px;
+}
+
+.formulario label {
+    display: block;
+    margin: 10px 0;
+
+}
+
+.input_padrao {
+    display: block;
+    margin-bottom: 10px;
+    width: 40em;
+    height: 2em;
+    border-radius: 10px;
+}
+
+.input_radio{
+    display: block-inline;
+}
+
+.botao{
+    width: 10em;
+    height: 2em;
+    border-radius: 8px;
+    transition: 0.5s;
+    cursor:pointer;
+}
+
+.botao:hover{
+    background-color: #444444;
+}
