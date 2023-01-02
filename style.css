@@ -68,6 +68,28 @@ label {
 }
 
 .tituloLista {
-    
     border-bottom: 1px solid black;
+}
+
+.removeItem {
+    
+    font-size:14px;
+    font-family: Comic Sans MS;
+    width: 20px;
+    height: 20px;
+    
+    overflow: visible;
+    line-height: center;
+    color:black;
+    border: none;
+    font-weight:bold;
+    margin-left: 5px;
+    /* box-shadow:inset 0px 1px 0px 0px #fce2c1; */
+    /* text-shadow:inset 0px 1px 0px #cc9f52; */
+    background:transparent;
+    cursor: pointer;
+}
+
+.removeItem:hover {
+    background: #fb9e25
 }
