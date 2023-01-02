@@ -8,7 +8,9 @@ let categoria;
 let indiceCat;
 let tabela = "";
 
-const botao = document.querySelector("#inserir");
+let removeItemBotao = [];
+
+const botaoInserir = document.querySelector("#inserir");
 const botaoImprimir = document.querySelector("#imprimir");
 const areaImpressao = document.querySelector("#area_impressao");
 
@@ -26,7 +28,7 @@ function identificaCategoriaSelecionada(){
     document.querySelector("#userInput").value ="";                           
 }
 
-function imprimeLista() {
+function atualizaLista() {
     const titulo = document.querySelector(".tituloLista");
     titulo.hidden = false;
     for(let j=0; j<categorias.length; j++){
@@ -34,7 +36,7 @@ function imprimeLista() {
        
         for(let i=0; i<categorias[j].length; i++){
             if(categorias[j][i+1] != undefined && categorias[j][i+1] != null){
-                tabela += "<li class='itemLista'>"+`${categorias[j][i+1]}`+"<button class='removeItem'>x</button></li>"; 
+                tabela += "<li class='itemLista'>"+`${categorias[j][i+1]}`+"<button class='removeItem' data-j='" +`${j}`+ "' data-i='" +`${i+1}`+ "'>x</button></li>"; 
             }
         }
         tabela += "</ul></ul></li>";
@@ -43,19 +45,37 @@ function imprimeLista() {
     tabela += "</ul>";
     areaImpressao.innerHTML = tabela;
     tabela = "";
+
+    //adiciona à variável botaoRemove apenas quando existir o primeiro item incluído na lista
+    funçãoRemoveItem();
+    
+   
 }
 
-botao.onclick = function() {
+function funçãoRemoveItem() {
+    removeItemBotao = document.querySelectorAll("[data-j]"); 
+
+    removeItemBotao.forEach((elemento) => {
+        elemento.addEventListener("click", (evento) => {
+            itemRemover = categorias[evento.target.dataset.j][evento.target.dataset.i];
+            categorias[evento.target.dataset.j].splice(evento.target.dataset.i, 1);
+            atualizaLista();
+        });
+    });
+}
+
+botaoInserir.onclick = function() {
     identificaCategoriaSelecionada();
-    imprimeLista();
+    atualizaLista();
 }
 
 document.querySelector("#userInput").addEventListener('keydown', function(e) {
     if (e.key === 'Enter'){
         identificaCategoriaSelecionada();
-        imprimeLista();
+        atualizaLista();
     }
 });
 
+botaoImprimir.onclick = atualizaLista;
 
-botaoImprimir.onclick = imprimeLista;
+
