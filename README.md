@@ -11,6 +11,6 @@
 
 <h2>Demonstração</h2>
 <p align="center">
-<img src="" >
+<img src="https://github.com/H4-DeS/lista-de-compras/blob/main/preview.gif">
 </p>
 
